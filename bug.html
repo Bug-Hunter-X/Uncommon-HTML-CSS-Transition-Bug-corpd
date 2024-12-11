@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDiv").style.display = "none"; // Hide the div
+      document.getElementById("myDiv").style.display = "block"; // Immediately show it again
+
+      // The bug is that the transition effect won't work if you try to show
+      // the element immediately after hiding it in the same function.
+      // To fix it, use setTimeout to introduce a small delay.
+    }
+  </script>
+</body>
+</html>
