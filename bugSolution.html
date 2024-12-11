@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+<style>
+  #myDiv {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    transition: opacity 0.5s ease;
+  }
+</style>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      document.getElementById("myDiv").style.opacity = 0; // Hide with opacity transition
+      setTimeout(function() {
+        document.getElementById("myDiv").style.opacity = 1; // Show with transition after a delay
+      }, 0); 
+    }
+  </script>
+</body>
+</html>
